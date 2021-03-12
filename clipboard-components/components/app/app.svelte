@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import buildNotionBlocks from './bits/notion_templates/build';
+	import buildMarkdown from './bits/buildMarkdown';
 	import processHashData from './bits/processData';
 
 	let commitData = [];
@@ -27,8 +28,9 @@
 				failed = true;
 				return;
 			}
+			const md = buildMarkdown(commitData);
 
-			event.clipboardData.setData('text/plain', 'Sorry, this paste only works into Notion (for now)');
+			event.clipboardData.setData('text/plain', md);
 			event.clipboardData.setData('text/_notion-blocks-v2-production', blocks);
 			console.log(blocks);
 
