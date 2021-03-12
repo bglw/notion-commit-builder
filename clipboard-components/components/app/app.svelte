@@ -5,6 +5,7 @@
 	import toggle from './bits/notion_templates/toggle';
 
 	let commitData = [];
+	let copied = false;
 
 	onMount(() => {
 		let u = new URL(window.location);
@@ -34,6 +35,8 @@
 			event.clipboardData.setData('text/_notion-blocks-v2-production', blocks);
 			console.log(blocks);
 			event.preventDefault();
+
+			copied = true;
 		});
 	});
 
@@ -63,7 +66,13 @@
 	}
 </script>
 
-<div class="c-app">
+{#if copied}
+<hr>
+<p><b>Nice!</b> That's been copied. Go paste it into your Notion ticket :)</p>
+<hr>
+{/if}
+
+<div class="c-app" class:is-copied={copied}>
 {#each commitData as cd}
 	<h2>{cd.repo.replace(/\/$/, '')}</h2>
 	<ul class="c-app__commitlist">

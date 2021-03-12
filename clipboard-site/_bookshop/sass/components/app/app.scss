@@ -35,5 +35,9 @@
         &.is-selected {
             border-color: #7aa1ee;
         }
+
+        .is-copied &:not(.is-selected) {
+            display: none;
+        }
     }
 }
