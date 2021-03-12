@@ -1,0 +1,1 @@
+npx jekyll-extract -c . -s ../clipboard-site/assets/components.js -o ../clipboard-site/_bookshop -d --watch

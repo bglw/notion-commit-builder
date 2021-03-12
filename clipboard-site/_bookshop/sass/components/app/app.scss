@@ -1,0 +1,39 @@
+.c-app { $c: &;
+
+    .commitinfo {
+        display: inline-block;
+        min-width: 200px;
+        margin-right: 10px;
+    }
+
+    .author {
+        display: inline-block;
+    }
+
+    .when {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    &__commitlist {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__commit {
+        cursor: pointer;
+        border: solid 2px transparent;
+        border-radius: 4px;
+        padding: 4px;
+        margin: 2px;
+
+        &:hover {
+            border-color: #7aa1ee5b;
+        }
+
+        &.is-selected {
+            border-color: #7aa1ee;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+[meta]
+_hidden = false
+array_structures = []
+label = "app"
+description = "test description"
+icon = "fiber_new"
+tags = ["uncategorized"]
+
+[defaults]
+
+[standard]
+

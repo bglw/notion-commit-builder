@@ -1,0 +1,23 @@
+@import 'styles/**/*.scss';
+@import 'components/**/*.scss';
+
+// Storybook vvv
+#root {
+    display: none;
+}
+
+.sb-show-main {
+    margin: 0px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+#bookshop-generated-render-root {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}

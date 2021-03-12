@@ -1,0 +1,10 @@
+title: Clippy
+email: liam@cloudcannon.com
+description: >- 
+  Clippy
+
+plugins:
+  - jekyll-bookshop
+  - bookshop-array-structures
+  - jekyll-stretcher
+  - jekyll-svelte-slabs

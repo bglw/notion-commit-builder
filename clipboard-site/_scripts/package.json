@@ -1,0 +1,22 @@
+{
+  "name": "pgscripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "html-loader": "^2.1.1",
+    "import-glob-keyed": "0.0.1",
+    "svelte": "^3.35.0",
+    "svelte-ace": "^1.0.13",
+    "svelte-loader": "^3.0.0",
+    "svelte-slabs-renderer": "0.0.6",
+    "webpack": "^5.24.3",
+    "webpack-cli": "^4.5.0"
+  }
+}
