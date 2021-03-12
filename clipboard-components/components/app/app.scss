@@ -1,3 +1,13 @@
+body button {
+    border: solid 2px transparent;
+    font-size: 10px;
+    padding: 5px 10px;
+
+    &.is-selected {
+        border-color: #7aa1ee;
+    }
+}
+
 .c-app { $c: &;
 
     .commitinfo {
@@ -27,17 +37,28 @@
         border-radius: 4px;
         padding: 4px;
         margin: 2px;
+        display: none;
 
         &:hover {
             border-color: #7aa1ee5b;
         }
 
-        &.is-selected {
-            border-color: #7aa1ee;
+        &.is-author {
+            display: block;
         }
 
-        .is-copied &:not(.is-selected) {
-            display: none;
+        &.is-selected {
+            border-color: #7aa1ee;
+            display: block;
+        }
+
+        .is-copied & {
+            cursor: unset;
+            border-color: transparent;
+
+            &:not(.is-selected) {
+                display: none;
+            }
         }
     }
 }

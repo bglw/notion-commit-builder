@@ -1,26 +1,42 @@
 export default (bucket, num) => {
     const lines = [];
     let bucket_name = bucket.repo.replace(/\/$/, '');
+    let addLine = false;
     for (let commit of bucket.commits) {
-        lines.push([
-            commit[0].substr(0,7),
-            [
-                [
-                    "a",
-                    `https://us-west-1.console.aws.amazon.com/codesuite/codecommit/repositories/${bucket_name}/commit/${commit[0]}`
-                ]
-            ]
-        ]);
-        lines.push([": "])
-        lines.push([
-            commit[4],
-            [
-                [
-                    "i"
-                ]
-            ]
-        ]);
+        if (addLine) {
+            lines.push(["\n"]);
+            lines.push([
+                "                                                ",
+                [[
+                    "s"
+                ]]]);
+        }
         lines.push(["\n"]);
+        lines.push([
+            `${commit.author} committed `,
+            [[
+                "i"
+            ]]]);
+        lines.push([
+            commit.hash.substr(0,7),
+            [[
+                "a",
+                `https://us-west-1.console.aws.amazon.com/codesuite/codecommit/repositories/${bucket_name}/commit/${commit.hash}`
+            ],[
+                "i"
+            ]]]);
+        lines.push([
+            ` on ${new Date(commit.date).toDateString()}`,
+            [[
+                "i"
+            ]]]);
+        lines.push(["\n"]);
+        lines.push([
+            commit.message,
+            [[
+                "c"
+            ]]]);
+        addLine = true;
     }
 
     return {
@@ -36,9 +52,6 @@ export default (bucket, num) => {
                             "b"
                         ]
                     ]
-                ],
-                [
-                    "\n"
                 ],
                 ...lines
             ]
