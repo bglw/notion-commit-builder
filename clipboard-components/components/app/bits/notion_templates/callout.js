@@ -1,12 +1,13 @@
 export default (bucket, num) => {
     const lines = [];
+    let bucket_name = bucket.repo.replace(/\/$/, '');
     for (let commit of bucket.commits) {
         lines.push([
             commit[0].substr(0,7),
             [
                 [
                     "a",
-                    `https://us-west-1.console.aws.amazon.com/codesuite/codecommit/repositories/plugins/commit/${commit[0]}`
+                    `https://us-west-1.console.aws.amazon.com/codesuite/codecommit/repositories/${bucket_name}/commit/${commit[0]}`
                 ]
             ]
         ]);
@@ -29,7 +30,7 @@ export default (bucket, num) => {
         "properties": {
             "title": [
                 [
-                    bucket.repo.replace(/\/$/, ''),
+                    bucket_name,
                     [
                         [
                             "b"
