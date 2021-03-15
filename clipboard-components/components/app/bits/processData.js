@@ -11,7 +11,7 @@ export default (data) => {
             continue;
         }
         
-        section = section.match(/^([a-z]+\/)(.+)/i);
+        section = section.match(/^([a-z-]+\/)(.+)/i);
         if (!section) continue;
 
         let [,repo,commits] = section;
